@@ -1,0 +1,22 @@
+﻿{
+	"UTorrent": {
+		"Ip": "127.0.0.1",
+		"Port": 8080,
+		"Username": "admin",
+		"Password": "admin"
+	},
+	"Sickbeard": {
+		"Ip": "10.0.1.7",
+		"Port": 8081
+	},
+	"ArchiveExtensions": [".rar"],
+	"Labels": {
+		"tv": {
+			"TargetRatio": 1000,
+			"MinimumSeedHours": 72,
+			"BlacklistedDirectories": ["sample", "subs"],
+			"KeepExtensions": [".avi", ".mkv", ".mp4"],
+			"TargetDirectory": "C:\\Done"
+		}
+	}
+}

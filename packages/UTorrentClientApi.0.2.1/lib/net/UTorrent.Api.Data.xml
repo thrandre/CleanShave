@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UTorrent.Api.Data</name>
+    </assembly>
+    <members>
+        <member name="P:UTorrent.Api.Data.Torrent.Size">
+            <summary>
+            Integer in bytes
+            </summary>
+        </member>
+        <member name="P:UTorrent.Api.Data.Torrent.Progress">
+            <summary>
+            integer in per mils
+            </summary>
+        </member>
+        <member name="P:UTorrent.Api.Data.Torrent.Downloaded">
+            <summary>
+            integer in bytes
+            </summary>
+        </member>
+        <member name="P:UTorrent.Api.Data.Torrent.Uploaded">
+            <summary>
+            integer in bytes
+            </summary>
+        </member>
+        <member name="P:UTorrent.Api.Data.Torrent.Ratio">
+            <summary>
+            integer in per mils
+            </summary>
+        </member>
+        <member name="P:UTorrent.Api.Data.Torrent.UploadSpeed">
+            <summary>
+            integer in bytes per second
+            </summary>
+        </member>
+        <member name="P:UTorrent.Api.Data.Torrent.DownloadSpeed">
+            <summary>
+            integer in bytes per second
+            </summary>
+        </member>
+        <member name="P:UTorrent.Api.Data.Torrent.Eta">
+            <summary>
+            integer in seconds
+            </summary>
+        </member>
+        <member name="P:UTorrent.Api.Data.Torrent.Availability">
+            <summary>
+            integer in 1/65535ths
+            </summary>
+        </member>
+        <member name="P:UTorrent.Api.Data.Torrent.Remaining">
+            <summary>
+            integer in bytes
+            </summary>
+        </member>
+    </members>
+</doc>

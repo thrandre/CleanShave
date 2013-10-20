@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>UTorrentClientApi</id>
+    <version>0.2.1</version>
+    <title>UTorrentClient Api</title>
+    <authors>latop2604</authors>
+    <owners>latop2604</owners>
+    <licenseUrl>https://utorrentclientapi.codeplex.com/license</licenseUrl>
+    <projectUrl>https://utorrentclientapi.codeplex.com/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>UTorrentClient Api is an extensible set of classes that use WebUI to manipulate µTorrent remotely.</description>
+    <summary>UTorrentClient Api is an extensible set of classes that use WebUI to manipulate µTorrent remotely.</summary>
+    <releaseNotes>Fix exception with od µTorrent version</releaseNotes>
+    <copyright />
+    <language />
+    <tags>µTorrent uTorrent Torrent</tags>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="5.0.6" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System" targetFramework="" />
+      <frameworkAssembly assemblyName="System.Configuration" targetFramework="" />
+      <frameworkAssembly assemblyName="System.Configuration" targetFramework="" />
+      <frameworkAssembly assemblyName="System.Core" targetFramework="" />
+      <frameworkAssembly assemblyName="System.Web" targetFramework="" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

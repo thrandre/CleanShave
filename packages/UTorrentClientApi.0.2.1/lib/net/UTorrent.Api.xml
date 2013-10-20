@@ -1,0 +1,752 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UTorrent.Api</name>
+    </assembly>
+    <members>
+        <member name="T:UTorrent.Api.File.Bencoding.BencodeDecoder">
+            <summary>
+            A class used for decoding Bencoding.
+            </summary>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.BencodeDecoder.Decode(System.IO.Stream)">
+            <summary>
+            Decodes the stream
+            </summary>
+            <param name="input">The bencoded stream.</param>
+            <returns>An array of root elements.</returns>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.BencodeDecoder.Decode(System.String)">
+            <summary>
+            Decodes the string.
+            </summary>
+            <param name="bencodedValue">The bencoded string.</param>
+            <returns>An array of root elements.</returns>
+        </member>
+        <member name="T:UTorrent.Api.File.Bencoding.IBElement">
+            <summary>
+            An interface for bencoded elements.
+            </summary>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.IBElement.ToBencodedString">
+            <summary>
+            Generates the bencoded equivalent of the element.
+            </summary>
+            <returns>The bencoded equivalent of the element.</returns>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.IBElement.ToBencodedString(System.Text.StringBuilder)">
+            <summary>
+            Generates the bencoded equivalent of the element.
+            </summary>
+            <param name="builder">The StringBuilder to append to.</param>
+            <returns>The bencoded equivalent of the element.</returns>
+        </member>
+        <member name="T:UTorrent.Api.File.Bencoding.BInteger">
+            <summary>
+            A bencode integer.
+            </summary>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.BInteger.op_Implicit(System.Int32)~UTorrent.Api.File.Bencoding.BInteger">
+            <summary>
+            Allows you to set an integer to a BInteger.
+            </summary>
+            <param name="value">The integer.</param>
+            <returns>The BInteger.</returns>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.BInteger.#ctor(System.Int64)">
+            <summary>
+            The main constructor.
+            </summary>
+            <param name="value">The value of the bencoded integer.</param>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.BInteger.ToBencodedString">
+            <summary>
+            Generates the bencoded equivalent of the integer.
+            </summary>
+            <returns>The bencoded equivalent of the integer.</returns>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.BInteger.ToBencodedString(System.Text.StringBuilder)">
+            <summary>
+            Generates the bencoded equivalent of the integer.
+            </summary>
+            <returns>The bencoded equivalent of the integer.</returns>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.BInteger.GetHashCode">
+            <see cref="M:System.Object.GetHashCode"/>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.BInteger.Equals(System.Object)">
+            <summary>
+            Int32.Equals(object)
+            </summary>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.BInteger.ToString">
+            <see cref="M:System.Object.ToString"/>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.BInteger.CompareTo(UTorrent.Api.File.Bencoding.BInteger)">
+            <see cref="M:System.IComparable.CompareTo(System.Object)"/>
+        </member>
+        <member name="P:UTorrent.Api.File.Bencoding.BInteger.Value">
+            <summary>
+            The value of the bencoded integer.
+            </summary>
+        </member>
+        <member name="T:UTorrent.Api.File.Bencoding.BString">
+            <summary>
+            A bencode string.
+            </summary>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.BString.op_Implicit(System.String)~UTorrent.Api.File.Bencoding.BString">
+            <summary>
+            Allows you to set a string to a BString.
+            </summary>
+            <param name="value">The string.</param>
+            <returns>The BString.</returns>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.BString.#ctor(System.String)">
+            <summary>
+            The main constructor.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.BString.ToBencodedString">
+            <summary>
+            Generates the bencoded equivalent of the string.
+            </summary>
+            <returns>The bencoded equivalent of the string.</returns>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.BString.ToBencodedString(System.Text.StringBuilder)">
+            <summary>
+            Generates the bencoded equivalent of the string.
+            </summary>
+            <param name="builder">The StringBuilder to append to.</param>
+            <returns>The bencoded equivalent of the string.</returns>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.BString.GetHashCode">
+            <see cref="M:System.Object.GetHashCode"/>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.BString.Equals(System.Object)">
+            <summary>
+            String.Equals(object)
+            </summary>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.BString.ToString">
+            <see cref="M:System.Object.ToString"/>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.BString.CompareTo(UTorrent.Api.File.Bencoding.BString)">
+            <see cref="M:System.IComparable.CompareTo(System.Object)"/>
+        </member>
+        <member name="P:UTorrent.Api.File.Bencoding.BString.Value">
+            <summary>
+            The value of the bencoded integer.
+            </summary>
+        </member>
+        <member name="T:UTorrent.Api.File.Bencoding.BList">
+            <summary>
+            A bencode list.
+            </summary>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.BList.ToBencodedString">
+            <summary>
+            Generates the bencoded equivalent of the list.
+            </summary>
+            <returns>The bencoded equivalent of the list.</returns>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.BList.ToBencodedString(System.Text.StringBuilder)">
+            <summary>
+            Generates the bencoded equivalent of the list.
+            </summary>
+            <param name="builder">The StringBuilder to append to.</param>
+            <returns>The bencoded equivalent of the list.</returns>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.BList.Add(System.String)">
+            <summary>
+            Adds the specified value to the list.
+            </summary>
+            <param name="value">The specified value.</param>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.BList.Add(System.Int32)">
+            <summary>
+            Adds the specified value to the list.
+            </summary>
+            <param name="value">The specified value.</param>
+        </member>
+        <member name="T:UTorrent.Api.File.Bencoding.BDictionary">
+            <summary>
+            A bencode dictionary.
+            </summary>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.BDictionary.ToBencodedString">
+            <summary>
+            Generates the bencoded equivalent of the dictionary.
+            </summary>
+            <returns>The bencoded equivalent of the dictionary.</returns>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.BDictionary.ToBencodedString(System.Text.StringBuilder)">
+            <summary>
+            Generates the bencoded equivalent of the dictionary.
+            </summary>
+            <param name="builder">The StringBuilder to append to.</param>
+            <returns>The bencoded equivalent of the dictionary.</returns>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.BDictionary.Add(System.String,UTorrent.Api.File.Bencoding.IBElement)">
+            <summary>
+            Adds the specified key-value pair to the dictionary.
+            </summary>
+            <param name="key">The specified key.</param>
+            <param name="value">The specified value.</param>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.BDictionary.Add(System.String,System.String)">
+            <summary>
+            Adds the specified key-value pair to the dictionary.
+            </summary>
+            <param name="key">The specified key.</param>
+            <param name="value">The specified value.</param>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.BDictionary.Add(System.String,System.Int32)">
+            <summary>
+            Adds the specified key-value pair to the dictionary.
+            </summary>
+            <param name="key">The specified key.</param>
+            <param name="value">The specified value.</param>
+        </member>
+        <member name="P:UTorrent.Api.File.Bencoding.BDictionary.Item(System.String)">
+            <summary>
+            Gets or sets the value assosiated with the specified key.
+            </summary>
+            <param name="key">The key of the value to get or set.</param>
+            <returns>The value assosiated with the specified key.</returns>
+        </member>
+        <member name="T:UTorrent.Api.File.Bencoding.BencodingException">
+            <summary>
+            A bencoding exception.
+            </summary>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.BencodingException.#ctor">
+            <summary>
+            Creates a new BencodingException.
+            </summary>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.BencodingException.#ctor(System.String)">
+            <summary>
+            Creates a new BencodingException.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:UTorrent.Api.File.Bencoding.BencodingException.#ctor(System.String,System.Exception)">
+            <summary>
+            Creates a new BencodingException.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="inner">The inner exception.</param>
+        </member>
+        <member name="P:UTorrent.Api.BaseResponse.Result">
+            <summary>
+            Request result
+            </summary>
+        </member>
+        <member name="P:UTorrent.Api.BaseResponse.Error">
+            <summary>
+            µTorrent result error
+            </summary>
+        </member>
+        <member name="T:UTorrent.Api.Tools.ChunkedMemoryStream">
+            <summary>
+            Defines a MemoryStream that does not sit on the Large Object Heap, thus avoiding memory fragmentation.
+            
+            </summary>
+        </member>
+        <member name="F:UTorrent.Api.Tools.ChunkedMemoryStream.DefaultChunkSize">
+            <summary>
+            Defines the default chunk size. Currently defined as 0x10000.
+            
+            </summary>
+        </member>
+        <member name="M:UTorrent.Api.Tools.ChunkedMemoryStream.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Kalten.Core.ChunkedMemoryStream"/> class.
+            
+            </summary>
+        </member>
+        <member name="M:UTorrent.Api.Tools.ChunkedMemoryStream.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Kalten.Core.ChunkedMemoryStream"/> class.
+            
+            </summary>
+            <param name="chunkSize">Size of the underlying chunks.</param>
+        </member>
+        <member name="M:UTorrent.Api.Tools.ChunkedMemoryStream.#ctor(System.Int32,System.Byte[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Kalten.Core.ChunkedMemoryStream"/> class based on the specified byte array.
+            
+            </summary>
+            <param name="chunkSize">Size of the underlying chunks.</param><param name="buffer">The array of unsigned bytes from which to create the current stream.</param>
+        </member>
+        <member name="M:UTorrent.Api.Tools.ChunkedMemoryStream.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by the <see cref="T:System.IO.Stream"/> and optionally releases the managed resources.
+            
+            </summary>
+            <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+        </member>
+        <member name="M:UTorrent.Api.Tools.ChunkedMemoryStream.Flush">
+            <summary>
+            When overridden in a derived class, clears all buffers for this stream and causes any buffered data to be written to the underlying device.
+                        This implementation does nothing.
+            
+            </summary>
+        </member>
+        <member name="M:UTorrent.Api.Tools.ChunkedMemoryStream.Read(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            When overridden in a derived class, reads a sequence of bytes from the current stream and advances the position within the stream by the number of bytes read.
+            
+            </summary>
+            <param name="buffer">An array of bytes. When this method returns, the buffer contains the specified byte array with the values between <paramref name="offset"/> and (<paramref name="offset"/> + <paramref name="count"/> - 1) replaced by the bytes read from the current source.</param><param name="offset">The zero-based byte offset in <paramref name="buffer"/> at which to begin storing the data read from the current stream.</param><param name="count">The maximum number of bytes to be read from the current stream.</param>
+            <returns>
+            The total number of bytes read into the buffer. This can be less than the number of bytes requested if that many bytes are not currently available, or zero (0) if the end of the stream has been reached.
+            
+            </returns>
+            <exception cref="T:System.ArgumentException">The sum of <paramref name="offset"/> and <paramref name="count"/> is larger than the buffer length.
+                        </exception><exception cref="T:System.ArgumentNullException"><paramref name="buffer"/> is null.
+                        </exception><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset"/> or <paramref name="count"/> is negative.
+                        </exception><exception cref="T:System.ObjectDisposedException">Methods were called after the stream was closed.
+                        </exception>
+        </member>
+        <member name="M:UTorrent.Api.Tools.ChunkedMemoryStream.ReadByte">
+            <summary>
+            Reads a byte from the stream and advances the position within the stream by one byte, or returns -1 if at the end of the stream.
+            
+            </summary>
+            
+            <returns>
+            The unsigned byte cast to an Int32, or -1 if at the end of the stream.
+            
+            </returns>
+            <exception cref="T:System.ObjectDisposedException">Methods were called after the stream was closed.
+                        </exception>
+        </member>
+        <member name="M:UTorrent.Api.Tools.ChunkedMemoryStream.Seek(System.Int64,System.IO.SeekOrigin)">
+            <summary>
+            When overridden in a derived class, sets the position within the current stream.
+            
+            </summary>
+            <param name="offset">A byte offset relative to the <paramref name="origin"/> parameter.</param><param name="origin">A value of type <see cref="T:System.IO.SeekOrigin"/> indicating the reference point used to obtain the new position.</param>
+            <returns>
+            The new position within the current stream.
+            
+            </returns>
+            <exception cref="T:System.ObjectDisposedException">Methods were called after the stream was closed.
+                        </exception>
+        </member>
+        <member name="M:UTorrent.Api.Tools.ChunkedMemoryStream.SetLength(System.Int64)">
+            <summary>
+            When overridden in a derived class, sets the length of the current stream.
+                        Not supported by this implementation.
+            
+            </summary>
+            <param name="value">The desired length of the current stream in bytes.</param><exception cref="T:System.NotSupportedException">The stream does not support both writing and seeking, such as if the stream is constructed from a pipe or console output.
+                        </exception><exception cref="T:System.ObjectDisposedException">Methods were called after the stream was closed.
+                        </exception>
+        </member>
+        <member name="M:UTorrent.Api.Tools.ChunkedMemoryStream.Write(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            When overridden in a derived class, writes a sequence of bytes to the current stream and advances the current position within this stream by the number of bytes written.
+            
+            </summary>
+            <param name="buffer">An array of bytes. This method copies <paramref name="count"/> bytes from <paramref name="buffer"/> to the current stream.</param><param name="offset">The zero-based byte offset in <paramref name="buffer"/> at which to begin copying bytes to the current stream.</param><param name="count">The number of bytes to be written to the current stream.</param><exception cref="T:System.ArgumentException">The sum of <paramref name="offset"/> and <paramref name="count"/> is greater than the buffer length.
+                        </exception><exception cref="T:System.ArgumentNullException"><paramref name="buffer"/> is null.
+                        </exception><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset"/> or <paramref name="count"/> is negative.
+                        </exception><exception cref="T:System.ObjectDisposedException">Methods were called after the stream was closed.
+                        </exception>
+        </member>
+        <member name="M:UTorrent.Api.Tools.ChunkedMemoryStream.WriteByte(System.Byte)">
+            <summary>
+            Writes a byte to the current position in the stream and advances the position within the stream by one byte.
+            
+            </summary>
+            <param name="value">The byte to write to the stream.</param><exception cref="T:System.ObjectDisposedException">Methods were called after the stream was closed.
+                        </exception>
+        </member>
+        <member name="P:UTorrent.Api.Tools.ChunkedMemoryStream.CanRead">
+            <summary>
+            When overridden in a derived class, gets a value indicating whether the current stream supports reading.
+            
+            </summary>
+            
+            <value/>
+            
+            <returns>
+            true if the stream supports reading; otherwise, false.
+            
+            </returns>
+        </member>
+        <member name="P:UTorrent.Api.Tools.ChunkedMemoryStream.CanSeek">
+            <summary>
+            When overridden in a derived class, gets a value indicating whether the current stream supports seeking.
+            
+            </summary>
+            
+            <value/>
+            
+            <returns>
+            true if the stream supports seeking; otherwise, false.
+            
+            </returns>
+        </member>
+        <member name="P:UTorrent.Api.Tools.ChunkedMemoryStream.CanWrite">
+            <summary>
+            When overridden in a derived class, gets a value indicating whether the current stream supports writing.
+            
+            </summary>
+            
+            <value/>
+            
+            <returns>
+            true if the stream supports writing; otherwise, false.
+            
+            </returns>
+        </member>
+        <member name="P:UTorrent.Api.Tools.ChunkedMemoryStream.Length">
+            <summary>
+            When overridden in a derived class, gets the length in bytes of the stream.
+            
+            </summary>
+            
+            <value/>
+            
+            <returns>
+            A long value representing the length of the stream in bytes.
+            
+            </returns>
+            <exception cref="T:System.ObjectDisposedException">Methods were called after the stream was closed.
+                        </exception>
+        </member>
+        <member name="P:UTorrent.Api.Tools.ChunkedMemoryStream.ChunkSize">
+            <summary>
+            Gets or sets the size of the underlying chunks. Cannot be greater than or equal to 85000.
+            
+            </summary>
+            
+            <value>
+            The chunks size.
+            </value>
+        </member>
+        <member name="P:UTorrent.Api.Tools.ChunkedMemoryStream.Position">
+            <summary>
+            When overridden in a derived class, gets or sets the position within the current stream.
+            
+            </summary>
+            
+            <value/>
+            
+            <returns>
+            The current position within the stream.
+            
+            </returns>
+            <exception cref="T:System.ObjectDisposedException">Methods were called after the stream was closed.
+                        </exception>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.#ctor">
+            <summary>
+            Create new <see cref="T:UTorrent.Api.UTorrentClient"/> instence with credential from configuration's AppSettings.
+            </summary>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.#ctor(System.String,System.String)">
+            <summary>
+            Create new <see cref="T:UTorrent.Api.UTorrentClient"/>
+            </summary>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.#ctor(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Create new <see cref="T:UTorrent.Api.UTorrentClient"/>
+            </summary>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.#ctor(System.Net.IPAddress,System.Int32,System.String,System.String)">
+            <summary>
+            Create new <see cref="T:UTorrent.Api.UTorrentClient"/>
+            </summary>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.#ctor(System.Net.IPEndPoint,System.String,System.String)">
+            <summary>
+            Create new <see cref="T:UTorrent.Api.UTorrentClient"/>
+            </summary>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.GetList">
+            <summary>
+            Get all torrents from µTorrent client without file's details
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.GetListAsync">
+            <summary>
+            Get all torrents from µTorrent client without file's details
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.GetList(System.Int32)">
+            <summary>
+            Get all torrents from µTorrent client without file's details
+            </summary>
+            <param name="cacheId">The cache id</param>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.GetListAsync(System.Int32)">
+            <summary>
+            Get all torrents from µTorrent client without file's details
+            </summary>
+            <param name="cacheId">The cache id</param>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.GetTorrent(System.String)">
+            <summary>
+            Get all torrents and specific torrent's files from µTorrent client
+            </summary>
+            <param name="hash">The torrent id</param>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.GetTorrentAsync(System.String)">
+            <summary>
+            Get torrent's files from µTorrent client
+            </summary>
+            <param name="hash">The torrent id</param>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.GetFiles(System.String)">
+            <summary>
+            Get torrent's files from µTorrent client
+            </summary>
+            <param name="hash">The torrent id</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.GetFilesAsync(System.String)">
+            <summary>
+            Get torrent's files from µTorrent client async
+            </summary>
+            <param name="hash">The torrent id</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.StartTorrent(System.String)">
+            <summary>
+            Start the torrent
+            </summary>
+            <param name="hash">The torrent hash</param>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.StartTorrentAsync(System.String)">
+            <summary>
+            Start the torrent
+            </summary>
+            <param name="hash">The torrent hash</param>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.StartTorrent(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Start torrent list
+            </summary>
+            <param name="hashs">Torrents hash</param>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.StartTorrentAsync(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Start torrent list async
+            </summary>
+            <param name="hashs">Torrents hash</param>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.StopTorrent(System.String)">
+            <summary>
+            Stop the torrent
+            </summary>
+            <param name="hash">The torrent hash</param>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.StopTorrentAsync(System.String)">
+            <summary>
+            Stop the torrent async
+            </summary>
+            <param name="hash">The torrent hash</param>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.StopTorrent(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Stop torrent list
+            </summary>
+            <param name="hashs">Torrents hash</param>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.StopTorrentAsync(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Stop torrent list async
+            </summary>
+            <param name="hashs">Torrents hash</param>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.PauseTorrent(System.String)">
+            <summary>
+            Pause the torrent
+            </summary>
+            <param name="hash">The torrent hash</param>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.PauseTorrentAsync(System.String)">
+            <summary>
+            Pause the torrent async
+            </summary>
+            <param name="hash">The torrent hash</param>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.PauseTorrent(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Pause torrent list
+            </summary>
+            <param name="hashs">Torrents hash</param>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.PauseTorrentAsync(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Pause torrent list async
+            </summary>
+            <param name="hashs">Torrents hash</param>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.DeleteTorrent(System.String)">
+            <summary>
+            Delete the torrent
+            </summary>
+            <param name="hash">The torrent hash</param>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.DeleteTorrentAsync(System.String)">
+            <summary>
+            Delete the torrent async
+            </summary>
+            <param name="hash">The torrent hash</param>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.DeleteTorrent(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Delete torrent list
+            </summary>
+            <param name="hashs">Torrents hash</param>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.DeleteTorrentAsync(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Delete torrent list async
+            </summary>
+            <param name="hashs">Torrents hash</param>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.RecheckTorrent(System.String)">
+            <summary>
+            Recheck the torrent
+            </summary>
+            <param name="hash">The torrent hash</param>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.RecheckTorrentAsync(System.String)">
+            <summary>
+            Recheck the torrent async
+            </summary>
+            <param name="hash">The torrent hash</param>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.RecheckTorrent(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Recheck torrent list
+            </summary>
+            <param name="hashs">Torrents hash</param>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.RecheckTorrentAsync(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Recheck torrent list async
+            </summary>
+            <param name="hashs">Torrents hash</param>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.AddUrlTorrent(System.Uri,System.String)">
+            <summary>
+            Send torrent url to the µTorrent client
+            </summary>
+            <param name="uri">The torrent url</param>
+            <param name="path">The torrent destination sub-folder</param>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.AddUrlTorrentAsync(System.Uri,System.String)">
+            <summary>
+            Send torrent url to the µTorrent client
+            </summary>
+            <param name="uri">The torrent url</param>
+            <param name="path">The torrent destination sub-folder</param>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.AddUrlTorrent(System.String,System.String)">
+            <summary>
+            Send torrent url to the µTorrent client
+            </summary>
+            <param name="uri">The torrent url</param>
+            <param name="path">The torrent destination sub-folder</param>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.PostTorrent(System.IO.Stream,System.String)">
+            <summary>
+            Send torrent file to the µTorrent client
+            </summary>
+            <param name="inputStream">The torrent file stream</param>
+            <param name="path">The torrent destination sub-folder</param>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.PostTorrentAsync(System.IO.Stream,System.String)">
+            <summary>
+            Send torrent file to the µTorrent client
+            </summary>
+            <param name="inputStream">The torrent file stream</param>
+            <param name="path">The torrent destination sub-folder</param>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.PostTorrent(System.IO.Stream,System.String,System.Int32)">
+            <summary>
+            Send torrent file to the µTorrent client
+            </summary>
+            <param name="inputStream">The torrent file stream</param>
+            <param name="path">The torrent destination sub-folder</param>
+            <param name="cacheId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.TestGetToken">
+            <summary>
+            Available for test only
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.ProcessRequest``1(UTorrent.Api.BaseRequest{``0})">
+            <summary>
+            Send request to the µTorrent client
+            </summary>
+            <typeparam name="TResponse">The response type</typeparam>
+            <param name="request">The request</param>
+            <returns>The response data</returns>
+        </member>
+        <member name="M:UTorrent.Api.UTorrentClient.ConsolidateTorrent(UTorrent.Api.BaseResponse,System.String)">
+            <summary>
+            Find Specific torrent with his files in an UTorrenre response
+            </summary>
+            <param name="response"></param>
+            <param name="hash">The torrent id</param>
+            <returns>A <see cref="T:UTorrent.Api.Data.Torrent"/></returns>
+        </member>
+        <member name="P:UTorrent.Api.UTorrentClient.UseCache">
+            <summary>
+            If True, activate µTorrent client cache
+            </summary>
+        </member>
+        <member name="M:UTorrent.Api.Request.GenerateAuthorizedUrl">
+            <summary>
+            Fuck yeah!
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
