@@ -6,19 +6,19 @@ namespace Core.Datamining.Chimera
 {
 	public abstract class ChimeraManuscript<T>
 	{
-	    private readonly ISerializer _serializer;
+		private readonly ISerializer _serializer;
 
-	    protected ChimeraManuscript(ISerializer serializer)
-	    {
-	        _serializer = serializer;
-	    }
+		protected ChimeraManuscript(ISerializer serializer)
+		{
+			_serializer = serializer;
+		}
 
-	    public abstract IChimeraManuscriptArgument GetFileArgument();
+		public abstract IChimeraManuscriptArgument GetFileArgument();
 		public abstract IEnumerable<IChimeraManuscriptArgument> GetManuscriptArguments();
 		public virtual T DeserializeEntity(string serializedEntity)
 		{
 			T entity;
-			
+
 			try
 			{
 				entity = _serializer.Deserialize<T>(serializedEntity);

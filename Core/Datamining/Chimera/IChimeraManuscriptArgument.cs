@@ -2,5 +2,5 @@
 
 namespace Core.Datamining.Chimera
 {
-	public interface IChimeraManuscriptArgument : IProcessArgument {}
+	public interface IChimeraManuscriptArgument : IProcessArgument { }
 }

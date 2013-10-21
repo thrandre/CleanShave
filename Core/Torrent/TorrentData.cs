@@ -3,16 +3,16 @@ using System.Collections.Generic;
 
 namespace Core.Torrent
 {
-    public class TorrentData
-    {
-        public string Hash { get; set; }
-        public string Name { get; set; }
-        public string Label { get; set; }
-        public bool Done { get; set; }
-        public int Ratio { get; set; }
-        public DateTime DateAdded { get; set; }
+	public class TorrentData
+	{
+		public string Hash { get; set; }
+		public string Name { get; set; }
+		public string Label { get; set; }
+		public bool Done { get; set; }
+		public int Ratio { get; set; }
+		public DateTime DateAdded { get; set; }
 
-        public string DownloadPath { get; set; }
-        public IList<TorrentFile> Files { get; set; } 
-    }
+		public string DownloadPath { get; set; }
+		public IList<TorrentFile> Files { get; set; }
+	}
 }

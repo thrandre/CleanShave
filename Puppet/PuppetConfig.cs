@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.UI.WebControls.Expressions;
+﻿using System.Collections.Generic;
 
 namespace CleanShave.Puppet
 {
@@ -14,7 +9,7 @@ namespace CleanShave.Puppet
 
 		public int PollInterval { get; set; }
 		public string[] ArchiveExtensions { get; set; }
-		
+
 		public Dictionary<string, LabelConfig> Labels { get; set; }
 	}
 }

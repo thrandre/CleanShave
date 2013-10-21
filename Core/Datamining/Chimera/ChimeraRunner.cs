@@ -41,11 +41,11 @@ namespace Core.Datamining.Chimera
 		private FileInfo SaveRunScript()
 		{
 			var stamp = DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture);
-			
+
 			var path = Path.Combine(
-				Settings.WorkingDirectory.FullName, 
-				string.Format("chimera-{0}.cmd", stamp.Substring(stamp.Count()-5)));
-			
+				Settings.WorkingDirectory.FullName,
+				string.Format("chimera-{0}.cmd", stamp.Substring(stamp.Count() - 5)));
+
 			var script = GenerateRunScript();
 
 			File.WriteAllText(path, script);

@@ -16,7 +16,7 @@ namespace Core.Processes
 			{
 				return String.Empty;
 			}
-			
+
 			var argStr = new StringBuilder();
 
 			foreach (var arg in arguments)
