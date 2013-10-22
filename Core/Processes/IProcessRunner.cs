@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using Core.Processes;
 
-namespace Core.Processes
+namespace CleanShave.Core.Processes
 {
 	public interface IProcessRunner
 	{

@@ -1,6 +1,7 @@
 using System.Web.Script.Serialization;
+using Core.Serialization;
 
-namespace Core.Serialization
+namespace CleanShave.Core.Serialization
 {
 	public class DefaultJavascriptSerializer : ISerializer
 	{

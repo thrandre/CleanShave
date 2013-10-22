@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 
-namespace Core.Processes
+namespace CleanShave.Core.Processes
 {
 	public class ProcessRunner : IProcessRunner
 	{
@@ -12,19 +12,7 @@ namespace Core.Processes
 
 		private string BuildArgumentString(IEnumerable<IProcessArgument> arguments)
 		{
-			if (arguments == null)
-			{
-				return String.Empty;
-			}
-
-			var argStr = new StringBuilder();
-
-			foreach (var arg in arguments)
-			{
-				argStr.Append(arg.ToFormattedString()).Append(" ");
-			}
-
-			return argStr.ToString().Trim();
+			return arguments == null ? String.Empty : String.Join(" ", arguments).Trim();
 		}
 
 		public ProcessResult Run(IEnumerable<IProcessArgument> arguments)

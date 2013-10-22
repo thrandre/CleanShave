@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UTorrent.Api;
 
-namespace Core.Torrent.Clients.MicroTorrent
+namespace CleanShave.Core.Torrent.Clients.MicroTorrent
 {
 	public class MicroTorrentAdapter : ITorrentClient
 	{

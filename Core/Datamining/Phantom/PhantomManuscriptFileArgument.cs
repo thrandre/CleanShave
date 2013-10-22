@@ -1,12 +1,12 @@
 ﻿using System.IO;
 
-namespace Core.Datamining.Chimera
+namespace CleanShave.Core.Datamining.Phantom
 {
-	public class ChimeraManuscriptFileArgument : IChimeraManuscriptArgument
+	public class PhantomManuscriptFileArgument : IPhantomManuscriptArgument
 	{
 		private readonly FileInfo _manuscriptPath;
 
-		public ChimeraManuscriptFileArgument(FileInfo manuscriptPath)
+		public PhantomManuscriptFileArgument(FileInfo manuscriptPath)
 		{
 			_manuscriptPath = manuscriptPath;
 		}

@@ -1,4 +1,4 @@
-namespace Core.Torrent
+namespace CleanShave.Core.Torrent
 {
 	public class TorrentFile
 	{

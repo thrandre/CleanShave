@@ -1,11 +1,11 @@
-﻿namespace Core.Datamining.Chimera
+﻿namespace CleanShave.Core.Datamining.Phantom
 {
-	public class ChimeraManuscriptArgument : IChimeraManuscriptArgument
+	public class PhantomManuscriptArgument : IPhantomManuscriptArgument
 	{
 		private readonly string _name;
 		private readonly object _value;
 
-		public ChimeraManuscriptArgument(string name, object value)
+		public PhantomManuscriptArgument(string name, object value)
 		{
 			_name = name;
 			_value = value;

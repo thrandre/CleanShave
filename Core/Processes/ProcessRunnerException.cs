@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Core.Processes
+namespace CleanShave.Core.Processes
 {
 	public class ProcessRunnerException : Exception
 	{

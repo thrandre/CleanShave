@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace Core.Datamining.Chimera
+namespace CleanShave.Core.Datamining.Phantom
 {
 	public static class Settings
 	{

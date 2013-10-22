@@ -1,4 +1,4 @@
-﻿namespace Core.Serialization
+﻿namespace CleanShave.Core.Serialization
 {
 	public interface ISerializer
 	{

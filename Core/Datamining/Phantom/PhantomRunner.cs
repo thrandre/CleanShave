@@ -5,11 +5,12 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Core.Processes;
+using CleanShave.Core.Datamining.Chimera;
+using CleanShave.Core.Processes;
 
-namespace Core.Datamining.Chimera
+namespace CleanShave.Core.Datamining.Phantom
 {
-	public class ChimeraRunner : IDisposable
+	public class PhantomRunner : IDisposable
 	{
 		public IProcessRunner ProcessRunner
 		{
@@ -78,13 +79,13 @@ namespace Core.Datamining.Chimera
 					}
 					else
 					{
-						throw new ChimeraException(
+						throw new PhantomException(
 							String.Format("Returned with error: {0}", result.Errors));
 					}
 				}
 				catch (ProcessRunnerException pre)
 				{
-					throw new ChimeraException(
+					throw new PhantomException(
 						String.Format("Failed to start process: {0}", pre.Message));
 				}
 
@@ -92,7 +93,7 @@ namespace Core.Datamining.Chimera
 			});
 		}
 
-		~ChimeraRunner()
+		~PhantomRunner()
 		{
 			Dispose();
 		}

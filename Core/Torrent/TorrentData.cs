@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
+using Core.Torrent;
 
-namespace Core.Torrent
+namespace CleanShave.Core.Torrent
 {
 	public class TorrentData
 	{
