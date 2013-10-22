@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Core.Torrent;
 
 namespace CleanShave.Core.Torrent
 {
