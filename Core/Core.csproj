@@ -55,13 +55,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Datamining\Chimera\ChimeraException.cs" />
-    <Compile Include="Datamining\Chimera\ChimeraManuscript.cs" />
-    <Compile Include="Datamining\Chimera\ChimeraManuscriptArgument.cs" />
-    <Compile Include="Datamining\Chimera\ChimeraManuscriptArgumentArray.cs" />
-    <Compile Include="Datamining\Chimera\ChimeraManuscriptFileArgument.cs" />
-    <Compile Include="Datamining\Chimera\ChimeraRunner.cs" />
-    <Compile Include="Datamining\Chimera\IChimeraManuscriptArgument.cs" />
+    <Compile Include="Datamining\Phantom\PhantomException.cs" />
+    <Compile Include="Datamining\Phantom\PhantomManuscript.cs" />
+    <Compile Include="Datamining\Phantom\PhantomManuscriptArgument.cs" />
+    <Compile Include="Datamining\Phantom\PhantomManuscriptArgumentArray.cs" />
+    <Compile Include="Datamining\Phantom\PhantomManuscriptFileArgument.cs" />
+    <Compile Include="Datamining\Phantom\PhantomRunner.cs" />
+    <Compile Include="Datamining\Phantom\IPhantomManuscriptArgument.cs" />
     <Compile Include="Serialization\DefaultJavascriptSerializer.cs" />
     <Compile Include="Serialization\ISerializer.cs" />
     <Compile Include="Processes\IProcessArgument.cs" />
@@ -70,7 +70,7 @@
     <Compile Include="Processes\ProcessResult.cs" />
     <Compile Include="Processes\ProcessRunner.cs" />
     <Compile Include="Processes\ProcessRunnerException.cs" />
-    <Compile Include="Datamining\Chimera\Settings.cs" />
+    <Compile Include="Datamining\Phantom\Settings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Torrent\TorrentFile.cs" />
     <Compile Include="Torrent\ITorrentClient.cs" />

@@ -1,4 +1,5 @@
-﻿using Core.Torrent;
+﻿using CleanShave.Core.Torrent;
+using Core.Torrent;
 
 namespace CleanShave.Puppet
 {

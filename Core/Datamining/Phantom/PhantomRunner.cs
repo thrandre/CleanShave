@@ -5,7 +5,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CleanShave.Core.Datamining.Chimera;
 using CleanShave.Core.Processes;
 
 namespace CleanShave.Core.Datamining.Phantom
@@ -54,7 +53,7 @@ namespace CleanShave.Core.Datamining.Phantom
 			return new FileInfo(path);
 		}
 
-		public Task<T> Run<T>(ChimeraManuscript<T> manuscript)
+		public Task<T> Run<T>(PhantomManuscript<T> manuscript)
 		{
 			if (_runScript == null)
 			{

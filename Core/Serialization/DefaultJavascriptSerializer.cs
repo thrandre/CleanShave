@@ -1,5 +1,4 @@
 using System.Web.Script.Serialization;
-using Core.Serialization;
 
 namespace CleanShave.Core.Serialization
 {

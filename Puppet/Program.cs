@@ -6,8 +6,9 @@ using System.Net;
 using System.Timers;
 using System.Web;
 using System.Web.Script.Serialization;
+using CleanShave.Core.Torrent;
+using CleanShave.Core.Torrent.Clients.MicroTorrent;
 using Core.Torrent;
-using Core.Torrent.Clients.MicroTorrent;
 using SevenZip;
 using Timer = System.Timers.Timer;
 

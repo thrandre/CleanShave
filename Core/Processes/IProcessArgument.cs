@@ -1,4 +1,4 @@
-﻿namespace Core.Processes
+﻿namespace CleanShave.Core.Processes
 {
 	public interface IProcessArgument
 	{
